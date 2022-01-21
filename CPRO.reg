@@ -1,0 +1,73 @@
+Windows Registry Editor Version 5.00
+
+ 
+
+;Register new CSP with SCARD media and system service endpoint
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Cryptography\Defaults\Provider\Crypto-Pro GOST R 34.10-2012 System CSP]
+
+"CP Module Entry Point"="DllStartServer"
+
+"CP Module Name"="cpcspr.dll"
+
+"Image Path"="C:\\Program Files\\Crypto Pro\\CSP\\cpcsp.dll"
+
+"ImpType"=dword:00000008
+
+"ProductCode"="{407E5BA7-6406-40BF-A4DC-3654B8F584C1}"
+
+"CP Service Name"="CryptoPro CSP Service 0"
+
+"CP Service UUID"="6E57FEEE-08E0-46ad-98C6-266B632C03FE"
+
+"SigInFile"=dword:00000001
+
+"Media"="SCARD"
+
+"Type"=dword:00000050
+
+ 
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Cryptography\Defaults\Provider\Crypto-Pro GOST R 34.10-2012 System CSP]
+
+"CP Module Entry Point"="DllStartServer"
+
+"CP Module Name"="cpcspr.dll"
+
+"Image Path"="C:\\Program Files (x86)\\Crypto Pro\\CSP\\cpcsp.dll"
+
+"ImpType"=dword:00000008
+
+"ProductCode"="{407E5BA7-6406-40BF-A4DC-3654B8F584C1}"
+
+"CP Service Name"="CryptoPro CSP Service 0"
+
+"CP Service UUID"="6E57FEEE-08E0-46ad-98C6-266B632C03FE"
+
+"SigInFile"=dword:00000001
+
+"Media"="SCARD"
+
+"Type"=dword:00000050
+
+ 
+
+;Set service no impersonate
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\cpcsp\Parameters]
+
+"NoImpersonate"=dword:00000001
+
+ 
+
+;Disable pin cache
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Crypto Pro\Cryptography\CurrentVersion\Parameters]
+
+"AuthPositions"=dword:00000020
+
+ 
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Crypto Pro\Cryptography\CurrentVersion\Parameters]
+
+"AuthPositions"=dword:00000020
